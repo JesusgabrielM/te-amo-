@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felices 58 Meses Juntos ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+h1{
+font-size:3rem;
+color:white;
+margin-bottom:20px;
+text-shadow:2px 2px 5px rgba(0,0,0,.3);
+}
+
+button{
+padding:15px 40px;
+font-size:1.2rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.hidden{
+display:none;
+}
+
+#celebration{
+padding:30px;
+text-align:center;
+}
+
+.message{
+color:white;
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:fixed;
+font-size:30px;
+animation:fall linear forwards;
+top:-50px;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+.counter{
+font-size:1.5rem;
+color:white;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="welcome">
+
+<h1>❤️ ey cocobola Tengo algo para ti ❤️</h1>
+
+<p style="color:white;font-size:1.2rem;margin-bottom:25px;">
+"aver papi que es?" ✨
+</p>
+
+<button onclick="mostrarSorpresa()">Ver</button>
+
+</div>
+
+<div id="celebration" class="hidden">
+
+<h1>💖 Felices 58 Meses Mi Amor 💖</h1>
+
+<p class="message">
+Gracias por cada sonrisa, cada abrazo y cada momento juntos. ❤️
+</p>
+
+<p class="counter">
+58 meses = 4 años y 10 meses de recuerdos inolvidables ✨
+</p>
+
+<div class="gallery">
+
+<img src="fotos/foto1.jpg">
+<img src="fotos/foto2.jpg">
+<img src="fotos/foto3.jpg">
+<img src="fotos/foto4.jpg">
+
+</div>
+
+<br><br>
+
+<h2 style="color:white;">
+🌹 Te amo muchísimo mi negrita 🌹
+</h2>
+
+</div>
+
+<script>
+
+function mostrarSorpresa(){
+document.getElementById("welcome").style.display="none";
+document.getElementById("celebration").classList.remove("hidden");
+
+setInterval(crearCorazon,250);
+}
+
+function crearCorazon(){
+
+const emojis=["❤️","💖","💕","💘","🥰","😘","🌹"];
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+</script>
+
+</body>
+</html>
